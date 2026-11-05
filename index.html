@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>喝水紀錄器</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=LXGW+WenKai+TC:wght@300;400;700&family=Noto+Serif+TC:wght@200..900&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="drinking-display-area">
+        <div class="water-container">
+          <div class="water-container-border"></div>
+          <div class="scale">
+            <div>
+              <span>2000ml</span>
+              <span class="line"></span>
+            </div>
+            <div>
+              <span>1500ml</span>
+              <span class="line"></span>
+            </div>
+            <div>
+              <span>1000ml</span>
+              <span class="line"></span>
+            </div>
+            <div>
+              <span>500ml</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="water"></div>
+        </div>
+
+        <section class="btn-container">
+          <button id="add100">+100ml</button>
+          <button id="add250">+250ml</button>
+          <button id="add500">+500ml</button>
+        </section>
+      </section>
+      <section class="drinking-record-area">
+        <div class="drinking-result">
+          <p>今日喝水量：<span>2000ml</span></p>
+          <div class="progress-bar">
+            <div class="progress-border"></div>
+            <div class="progress"></div>
+          </div>
+          <p>完成度：<span>100%</span></p>
+          <div class="progress-bar">
+            <div class="progress-border"></div>
+            <div class="progress completion"></div>
+          </div>
+        </div>
+        <div class="drinking-record"></div>
+        <button id="cleanBtn">清除紀錄</button>
+      </section>
+    </main>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

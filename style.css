@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  background-image:
+    linear-gradient(0deg, transparent 0 50%, rgba(150, 209, 254, 0.3) 50% 100%),
+    linear-gradient(90deg, transparent 0 50%, rgba(150, 209, 254, 0.3) 50% 100%);
+  background-size: 50px 50px;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.drinking-display-area,
+.drinking-record-area {
+  min-width: 330px;
+  background-color: white;
+  padding: 50px 40px 40px;
+  border-radius: 30px;
+  border: 6px solid rgb(150, 209, 254);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.drinking-display-area {
+  width: 25%;
+}
+
+.drinking-record-area {
+  width: 30%;
+}
+
+.water-container {
+  width: 30%;
+  min-width: 210px;
+  aspect-ratio: 3/4;
+  position: relative;
+  background-color: transparent;
+}
+
+.water-container-border {
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgb(245, 232, 118);
+  border-radius: 25px;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  box-shadow: 0px 0px 0px 10px white;
+}
+
+.scale {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 3;
+}
+
+.scale div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: 0 1 70px;
+}
+
+.scale span:first-of-type {
+  color: rgb(123, 128, 130);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.scale .line {
+  display: block;
+  width: 20px;
+  height: 5px;
+  background-color: rgb(245, 232, 118);
+}
+
+.water {
+  width: 100%;
+  height: 0;
+  background-color: lightskyblue;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn-container button {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(146, 182, 247);
+}
+button:active {
+  transform: scale(0.9);
+}
+
+.drinking-result {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drinking-result p {
+  font-weight: 600;
+  color: darkblue;
+}
+
+.drinking-result p:nth-of-type(2) {
+  color: crimson;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 25px;
+  background-color: transparent;
+  border-radius: 30px;
+  position: relative;
+}
+.progress-border {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  border: 3px solid rgb(245, 232, 118);
+  position: absolute;
+  top: 0;
+  box-shadow: 0 0 0 5px rgb(255, 255, 255);
+  z-index: 2;
+}
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: lightskyblue;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.progress.completion {
+  width: 0;
+  background-color: tomato;
+}
+
+.drinking-record {
+  width: 100%;
+  height: 250px;
+  background-color: rgb(179, 224, 251);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.record-item {
+  display: block;
+  width: 100%;
+  background-color: rgb(227, 244, 255);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.record-item span {
+  font-size: 0.9rem;
+}
+.record-item span:nth-of-type(3) {
+  color: darkblue;
+  font-weight: bold;
+}
+
+#cleanBtn {
+  background-color: tomato;
+  color: white;
+  align-self: flex-end;
+}
