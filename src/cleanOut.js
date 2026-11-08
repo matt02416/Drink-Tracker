@@ -7,6 +7,8 @@ import {
   getCompletionValue,
   setCompletionValue,
 } from "./displayProgress.js";
+import appData from "./appData.js";
+import { saveData } from "./save.js";
 
 // 函式：清除紀錄
 function cleanOut() {
@@ -30,6 +32,8 @@ function cleanOut() {
   setBottleVolume(bottleVolume);
   setDrinkingValue(drinkingValue);
   setCompletionValue(completionValue);
+  appData.records.length = 0;
+  saveData();
 }
 
 export default cleanOut;

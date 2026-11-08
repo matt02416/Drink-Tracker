@@ -1,5 +1,6 @@
 import { progress, completion } from "./connect.js";
 import { getWaterVolume, setWaterVolume } from "./variable.js";
+import { loadData, saveData } from "./save.js";
 
 // 進度條總長度
 const progressWidth = 369.6;
@@ -11,6 +12,12 @@ const unit = progressWidth / totalWaterVolume;
 let drinkingValue = 0;
 // 完成量
 let completionValue = 0;
+
+function initProgress() {
+  loadData();
+  progress.style.width = `${drinkingValue}px`;
+  completion.style.width = `${completionValue}px`;
+}
 
 function displayProgress(addValue) {
   // 共用水量
@@ -33,8 +40,7 @@ function displayProgress(addValue) {
   progress.style.width = `${drinkingValue}px`;
   completion.style.width = `${completionValue}px`;
   setWaterVolume(currentVolume);
-  console.log(currentVolume);
-  console.log(completionValue);
+  saveData();
 }
 
 function getDrinkingValue() {
@@ -57,4 +63,5 @@ export {
   setDrinkingValue,
   getCompletionValue,
   setCompletionValue,
+  initProgress,
 };
